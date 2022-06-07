@@ -1,0 +1,24 @@
+[submodule "custom/newlogic-g2p"]
+	path = custom/newlogic-g2p
+	url = git@github.com:newlogic/newlogic-g2p.git
+[submodule "custom/newlogic-g2p-erp-community-plugins"]
+	path = custom/newlogic-g2p-erp-community-plugins
+	url = git@github.com:newlogic/newlogic-g2p-community-plugins.git
+[submodule "custom/connector"]
+	path = custom/connector
+	url = git@github.com:OCA/connector.git
+[submodule "custom/queue"]
+	path = custom/queue
+	url = git@github.com:OCA/queue.git
+[submodule "custom/connector-interfaces"]
+	path = custom/connector-interfaces
+	url = git@github.com:OCA/connector-interfaces.git
+[submodule "custom/server-ux"]
+	path = custom/server-ux
+	url = git@github.com:OCA/server-ux.git
+[submodule "custom/server-tools"]
+	path = custom/server-tools
+	url = git@github.com:newlogic/oca-server-tools.git
+[submodule "custom/cybro-addons"]
+	path = custom/cybro-addons
+	url = git@github.com:CybroOdoo/CybroAddons.git

@@ -6,7 +6,7 @@ services:
     ports: ["1984:1984"]
     restart: unless-stopped
     networks:
-      - odoonet
+      - nl-g2p-odoonet
     depends_on: ["db"]
 
   # ------------------------
