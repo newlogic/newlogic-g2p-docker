@@ -3,7 +3,9 @@
 This is a flexible and **streamlined** version to run the project.
 
 
-## Quick usage
+## Quick start
+
+You need to have Docker and docker-compose installed.
 
 ```bash
 $ git clone git@github.com:newlogic/newlogic-g2p-docker.git
