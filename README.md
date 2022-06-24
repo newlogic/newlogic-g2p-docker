@@ -1,4 +1,4 @@
-# Newlogic G2P Docker setup
+# openG2P-ng Docker setup
 
 This is a flexible and **streamlined** version to run the project.
 
@@ -8,8 +8,8 @@ This is a flexible and **streamlined** version to run the project.
 You need to have Docker and docker-compose installed.
 
 ```bash
-$ git clone git@github.com:newlogic/newlogic-g2p-docker.git
-$ cd newlogic-g2p-docker
+$ git clone git@github.com:newlogic/openg2p-docker.git
+$ cd openg2p-docker
 $ git submodule init
 $ git submodule update
 $ docker-compose -f docker-compose.yml  -f dev-standalone.yml up
