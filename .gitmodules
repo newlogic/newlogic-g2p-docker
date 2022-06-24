@@ -1,6 +1,3 @@
-[submodule "custom/newlogic-g2p"]
-	path = custom/newlogic-g2p
-	url = git@github.com:newlogic/newlogic-g2p.git
 [submodule "custom/newlogic-g2p-erp-community-plugins"]
 	path = custom/newlogic-g2p-erp-community-plugins
 	url = git@github.com:newlogic/newlogic-g2p-community-plugins.git
@@ -22,3 +19,9 @@
 [submodule "custom/cybro-addons"]
 	path = custom/cybro-addons
 	url = git@github.com:CybroOdoo/CybroAddons.git
+[submodule "custom/odoo-celery"]
+	path = custom/odoo-celery
+	url = git@github.com:newlogic/odoo-celery.git
+[submodule "custom/openg2p"]
+	path = custom/openg2p
+	url = git@github.com:newlogic/openg2p.git

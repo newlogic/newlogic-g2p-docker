@@ -46,7 +46,6 @@ services:
       - nl-g2p-odoo-modules:${ODOO_EXTRA_ADDONS}
     depends_on:
       - db
-
     networks:
       nl-g2p-odoonet:
   # ------------------------
@@ -63,3 +62,39 @@ services:
 
     networks:
       nl-g2p-odoonet:
+  rabbitmq:
+    image: rabbitmq:3
+    ports:
+      - "5672:5672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+    
+    networks:
+      nl-g2p-odoonet:
+
+  odoo-celery:
+    image: newlogic42/dockerdoo:${ODOO_VERSION}
+    env_file: .env
+    
+    restart: unless-stopped
+
+    volumes:
+      # Host paths (.ssh configuration)
+      - ~/.ssh/:/opt/odoo/.ssh/:cached
+      # Named volumes
+      - nl-g2p-odoo-data:${ODOO_DATA_DIR}
+      - nl-g2p-odoo-testlogs:${ODOO_LOGS_DIR}
+      # - nl-g2p-odoo-modules:${ODOO_EXTRA_ADDONS}
+      - ./custom:${ODOO_EXTRA_ADDONS}:delegated
+    depends_on:
+      - db
+      - rabbitmq
+    networks:
+      nl-g2p-odoonet:
+    command: bash -c "cd /mnt/extra-addons/odoo-celery/celery && /opt/odoo/.local/bin/celery  -A odoo worker --loglevel=info"
+
+  # celery-beat:
+  #   extends:
+  #     service: odoo-celery
+  #   command: [/opt/odoo/.local/bin/celery, beat, --loglevel=info]
